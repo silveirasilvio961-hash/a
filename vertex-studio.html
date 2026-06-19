@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Vertex Studio — Creative Design, Motion & AI Solutions</title>
+<meta name="description" content="Marcas que param o feed. Resultados que mudam o jogo. Design, motion e IA para marcas ambiciosas.">
+<meta property="og:title" content="Vertex Studio">
+<meta property="og:description" content="Creative Design, Motion & AI Solutions">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400;1,600;1,700&family=Inter:wght@300;400;500;600;700&display=swap">
+<style>
+:root{
+  --bg:#0a0907;--fg:#fafaf8;--muted:#a8a194;--card:rgba(24,20,16,.5);--border:rgba(120,100,70,.25);
+  --gold1:#d4a857;--gold2:#f5d98a;--gold-soft:#b88a3a;
+  --grad:linear-gradient(135deg,#b88a3a,#f5d98a);
+  --grad-text:linear-gradient(120deg,#c9994a,#f5d98a);
+  --shadow:0 10px 40px -10px rgba(212,168,87,.55);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{
+  background:var(--bg);color:var(--fg);font-family:Inter,system-ui,sans-serif;line-height:1.5;-webkit-font-smoothing:antialiased;
+  background-image:
+    radial-gradient(ellipse 80% 50% at 20% 0%, rgba(212,168,87,.12), transparent 60%),
+    radial-gradient(ellipse 60% 50% at 100% 30%, rgba(245,217,138,.08), transparent 60%);
+  background-attachment:fixed;min-height:100vh;
+}
+a{color:inherit;text-decoration:none}
+button{font:inherit;color:inherit;background:none;border:none;cursor:pointer}
+ul,ol{list-style:none}
+.serif{font-family:"Cormorant Garamond",serif;font-weight:500;letter-spacing:-.01em}
+.italic{font-style:italic}
+.grad-text{background:var(--grad-text);-webkit-background-clip:text;background-clip:text;color:transparent}
+.container{max-width:1200px;margin:0 auto;padding:0 20px}
+@media(min-width:1024px){.container{padding:0 32px}}
+
+/* Header */
+header.nav{position:fixed;inset:0 0 auto 0;z-index:50;backdrop-filter:blur(20px);background:rgba(10,9,7,.6);border-bottom:1px solid var(--border)}
+.nav-inner{display:flex;align-items:center;justify-content:space-between;height:64px}
+.logo{font-family:"Cormorant Garamond",serif;font-size:24px;letter-spacing:-.01em}
+.logo .italic{background:var(--grad-text);-webkit-background-clip:text;background-clip:text;color:transparent}
+.nav-links{display:none;gap:32px;font-size:14px;color:var(--muted)}
+.nav-links a{transition:color .2s}.nav-links a:hover{color:var(--fg)}
+@media(min-width:768px){.nav-links{display:flex}}
+.nav-actions{display:flex;align-items:center;gap:12px}
+.icon-btn{height:40px;width:40px;display:none;align-items:center;justify-content:center;border-radius:999px;border:1px solid var(--border);transition:border-color .2s}
+.icon-btn:hover{border-color:rgba(250,250,248,.4)}
+@media(min-width:640px){.icon-btn{display:inline-flex}}
+.btn{display:inline-flex;align-items:center;gap:8px;border-radius:999px;padding:10px 16px;font-size:14px;font-weight:500;transition:transform .2s,box-shadow .2s,border-color .2s,background .2s}
+.btn-gold{background:var(--grad);color:#1a1206;box-shadow:var(--shadow)}
+.btn-gold:hover{transform:translateY(-1px);box-shadow:0 14px 50px -10px rgba(245,217,138,.7)}
+.btn-ghost{border:1px solid var(--border);background:rgba(24,20,16,.4)}
+.btn-ghost:hover{border-color:rgba(250,250,248,.4);background:var(--card)}
+.btn-lg{padding:14px 22px}
+.menu-btn{display:inline-flex;height:40px;width:40px;align-items:center;justify-content:center;border-radius:999px;border:1px solid var(--border)}
+@media(min-width:768px){.menu-btn{display:none}}
+.mobile-nav{display:none;border-top:1px solid var(--border);background:rgba(10,9,7,.9);backdrop-filter:blur(20px)}
+.mobile-nav.open{display:block}
+.mobile-nav nav{padding:16px 20px;display:flex;flex-direction:column;gap:12px;font-size:14px;color:var(--muted)}
+.mobile-nav a:hover{color:var(--fg)}
+
+/* Hero */
+main{padding-top:64px}
+.hero{padding:80px 0 80px}
+@media(min-width:1024px){.hero{padding:120px 0 112px}}
+.hero-grid{display:grid;grid-template-columns:1fr;gap:48px;align-items:center}
+@media(min-width:1024px){.hero-grid{grid-template-columns:1.4fr 1fr}}
+.chip{display:inline-flex;align-items:center;gap:8px;border-radius:999px;border:1px solid rgba(212,168,87,.4);background:rgba(212,168,87,.1);padding:6px 16px;font-size:11px;text-transform:uppercase;letter-spacing:.2em;color:var(--gold2);font-weight:500}
+.hero h1{margin-top:32px;font-family:"Cormorant Garamond",serif;font-size:48px;line-height:1.02;letter-spacing:-.02em}
+@media(min-width:640px){.hero h1{font-size:64px}}
+@media(min-width:1024px){.hero h1{font-size:80px}}
+@media(min-width:1280px){.hero h1{font-size:96px}}
+.hero p{margin-top:32px;max-width:560px;color:var(--muted);font-size:16px;line-height:1.65}
+@media(min-width:1024px){.hero p{font-size:18px}}
+.hero strong{color:var(--fg);font-weight:600}
+.hero-actions{margin-top:40px;display:flex;flex-wrap:wrap;gap:16px}
+.stats{display:flex;flex-direction:column;gap:16px}
+.stat{display:flex;align-items:center;justify-content:space-between;border-radius:18px;border:1px solid var(--border);background:rgba(24,20,16,.4);backdrop-filter:blur(10px);padding:20px 24px;transition:border-color .2s}
+.stat:hover{border-color:rgba(250,250,248,.2)}
+.stat-n{font-family:"Cormorant Garamond",serif;font-size:30px;background:var(--grad-text);-webkit-background-clip:text;background-clip:text;color:transparent}
+@media(min-width:1024px){.stat-n{font-size:38px}}
+.stat-l{font-size:13px;color:var(--muted);text-align:right;max-width:55%}
+.fade-up{animation:fadeUp .8s ease-out both}
+.fade-up.d{animation-delay:.2s}
+@keyframes fadeUp{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:translateY(0)}}
+
+/* Marquee */
+.marquee{border-top:1px solid var(--border);border-bottom:1px solid var(--border);padding:24px 0;overflow:hidden}
+.marquee-track{display:flex;gap:40px;white-space:nowrap;width:max-content;animation:marquee 40s linear infinite}
+.m-item{display:inline-flex;align-items:center;gap:40px;font-family:"Cormorant Garamond",serif;font-style:italic;font-size:24px;color:rgba(168,161,148,.85)}
+@media(min-width:1024px){.m-item{font-size:30px}}
+.m-sep{color:var(--gold1)}
+@keyframes marquee{from{transform:translateX(0)}to{transform:translateX(-33.333%)}}
+
+/* Sections */
+section{padding:96px 0}
+@media(min-width:1024px){section{padding:128px 0}}
+.section-bordered{border-top:1px solid var(--border);border-bottom:1px solid var(--border)}
+.eyebrow{font-size:11px;text-transform:uppercase;letter-spacing:.25em;color:var(--muted)}
+.section-title{margin-top:16px;font-family:"Cormorant Garamond",serif;font-size:36px;line-height:1.05;letter-spacing:-.02em;max-width:780px}
+@media(min-width:1024px){.section-title{font-size:60px}}
+
+/* Pillars */
+.pillars{margin-top:56px;display:grid;grid-template-columns:1fr;gap:24px}
+@media(min-width:768px){.pillars{grid-template-columns:repeat(3,1fr)}}
+.pillar{border-radius:24px;border:1px solid var(--border);background:rgba(24,20,16,.5);backdrop-filter:blur(10px);padding:32px;transition:transform .25s,border-color .25s}
+.pillar:hover{transform:translateY(-4px);border-color:rgba(250,250,248,.2)}
+.pillar .n{font-size:12px;color:var(--muted)}
+.pillar h3{margin-top:16px;font-family:"Cormorant Garamond",serif;font-style:italic;font-size:36px;background:var(--grad-text);-webkit-background-clip:text;background-clip:text;color:transparent}
+.pillar .desc{margin-top:16px;color:var(--muted);line-height:1.65}
+.pillar ul{margin-top:24px;display:flex;flex-direction:column;gap:8px;font-size:14px}
+.pillar li{display:flex;align-items:center;gap:8px}
+.dot{height:4px;width:4px;border-radius:999px;background:rgba(250,250,248,.6);flex:0 0 auto}
+.dot-gold{background:var(--grad);margin-top:6px}
+
+/* Manifesto */
+.manifesto{max-width:880px;margin:0 auto;text-align:center}
+.manifesto-text{margin-top:32px;font-family:"Cormorant Garamond",serif;font-size:28px;line-height:1.18;letter-spacing:-.02em}
+@media(min-width:1024px){.manifesto-text{font-size:48px}}
+.manifesto p.sub{margin:32px auto 0;max-width:640px;color:var(--muted)}
+
+/* Services */
+.services-grid{display:grid;grid-template-columns:1fr;gap:48px}
+@media(min-width:1024px){.services-grid{grid-template-columns:1fr 1.2fr;gap:80px}}
+.services-grid .col p{margin-top:24px;color:var(--muted);line-height:1.65}
+.card{border-radius:24px;border:1px solid var(--border);background:rgba(24,20,16,.5);padding:32px}
+.card + .card{margin-top:32px}
+.card h3{font-family:"Cormorant Garamond",serif;font-size:24px}
+.list{margin-top:24px;display:grid;grid-template-columns:1fr;gap:12px 24px;font-size:14px}
+.list-2{display:grid;grid-template-columns:1fr;gap:12px 24px}
+@media(min-width:640px){.list-2{grid-template-columns:1fr 1fr}}
+.list li{display:flex;align-items:flex-start;gap:8px}
+
+/* Process */
+.process{margin-top:56px;display:grid;grid-template-columns:1fr;gap:20px}
+@media(min-width:768px){.process{grid-template-columns:1fr 1fr}}
+@media(min-width:1024px){.process{grid-template-columns:repeat(5,1fr)}}
+.process li{border-radius:20px;border:1px solid var(--border);background:rgba(24,20,16,.5);padding:24px;transition:border-color .2s}
+.process li:hover{border-color:rgba(250,250,248,.2)}
+.process .n{font-family:"Cormorant Garamond",serif;font-size:30px;background:var(--grad-text);-webkit-background-clip:text;background-clip:text;color:transparent}
+.process h3{margin-top:16px;font-size:18px;font-weight:600}
+.process p{margin-top:12px;font-size:14px;color:var(--muted);line-height:1.6}
+
+/* FAQ */
+.faq-wrap{max-width:880px;margin:0 auto}
+.faq-list{margin-top:48px;border-top:1px solid var(--border);border-bottom:1px solid var(--border)}
+.faq-item{border-bottom:1px solid var(--border)}
+.faq-item:last-child{border-bottom:none}
+.faq-q{width:100%;display:flex;align-items:center;justify-content:space-between;gap:24px;padding:24px 0;text-align:left;transition:opacity .2s}
+.faq-q:hover{opacity:.8}
+.faq-q .q{font-family:"Cormorant Garamond",serif;font-size:20px}
+@media(min-width:1024px){.faq-q .q{font-size:24px}}
+.faq-q .toggle{flex:none;height:40px;width:40px;border-radius:999px;border:1px solid var(--border);display:inline-flex;align-items:center;justify-content:center}
+.faq-a{display:grid;grid-template-rows:0fr;opacity:0;transition:grid-template-rows .3s,opacity .3s,padding .3s}
+.faq-a > div{overflow:hidden;color:var(--muted);line-height:1.65}
+.faq-item.open .faq-a{grid-template-rows:1fr;opacity:1;padding-bottom:24px}
+
+/* CTA */
+.cta-box{position:relative;overflow:hidden;border-radius:24px;border:1px solid var(--border);background:rgba(24,20,16,.6);padding:40px 24px;text-align:center}
+@media(min-width:1024px){.cta-box{padding:64px}}
+.cta-box::before{content:"";position:absolute;inset:0;pointer-events:none;opacity:.6;background:radial-gradient(ellipse at 50% 0%, rgba(212,168,87,.25), transparent 70%)}
+.cta-box > *{position:relative}
+.cta-box p{margin:24px auto 0;max-width:640px;color:var(--muted)}
+.cta-actions{margin-top:40px;display:flex;flex-wrap:wrap;gap:16px;justify-content:center}
+
+/* Footer */
+footer{border-top:1px solid var(--border);padding:40px 0}
+.foot{display:flex;flex-direction:column;align-items:center;gap:16px}
+@media(min-width:640px){.foot{flex-direction:row;justify-content:space-between}}
+.foot .copy{font-size:12px;color:var(--muted)}
+.foot-icons{display:flex;gap:12px}
+.foot-icons a{height:36px;width:36px;display:inline-flex;align-items:center;justify-content:center;border-radius:999px;border:1px solid var(--border);transition:border-color .2s}
+.foot-icons a:hover{border-color:rgba(250,250,248,.4)}
+</style>
+</head>
+<body id="top">
+<header class="nav">
+  <div class="container nav-inner">
+    <a href="#top" class="logo">VERTEX <span class="italic">Studio</span></a>
+    <nav class="nav-links">
+      <a href="#pilares">Pilares</a><a href="#servicos">Serviços</a><a href="#processo">Processo</a><a href="#faq">FAQ</a>
+    </nav>
+    <div class="nav-actions">
+      <a href="https://instagram.com/V3rtex.studio" target="_blank" rel="noreferrer" aria-label="Instagram" class="icon-btn"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="16" height="16"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg></a>
+      <a href="https://wa.me/5567992743385" target="_blank" rel="noreferrer" class="btn btn-gold"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="16" height="16"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg><span>Fale no WhatsApp</span></a>
+      <button class="menu-btn" id="menuBtn" aria-label="Menu"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="16" height="16"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></button>
+    </div>
+  </div>
+  <div class="mobile-nav" id="mobileNav">
+    <nav>
+      <a href="#pilares">Pilares</a><a href="#servicos">Serviços</a><a href="#processo">Processo</a><a href="#faq">FAQ</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+<section class="hero">
+  <div class="container hero-grid">
+    <div class="fade-up">
+      <span class="chip"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="14" height="14"><path d="m12 3-1.9 5.8L4 10l5.8 1.9L12 18l1.9-5.8L20 10l-5.8-1.9z"/></svg>Creative Design, Motion & AI Solutions</span>
+      <h1>Marcas que param o feed. <span class="italic grad-text">Resultados que mudam o jogo.</span></h1>
+      <p>Somos um estúdio criativo que une <strong>design</strong>, <strong>motion</strong> e <strong>inteligência artificial</strong> para posicionar marcas ambiciosas e transformar atenção em receita.</p>
+      <div class="hero-actions">
+        <a href="https://wa.me/5567992743385" target="_blank" rel="noreferrer" class="btn btn-gold btn-lg"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="16" height="16"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>Falar no WhatsApp<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="16" height="16"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg></a>
+        <a href="https://instagram.com/V3rtex.studio" target="_blank" rel="noreferrer" class="btn btn-ghost btn-lg"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="16" height="16"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>Ver Instagram</a>
+      </div>
+    </div>
+    <div class="stats fade-up d">
+      <div class="stat"><span class="stat-n">+120</span><span class="stat-l">Projetos entregues</span></div>
+      <div class="stat"><span class="stat-n">3x</span><span class="stat-l">Velocidade com IA aplicada</span></div>
+      <div class="stat"><span class="stat-n">100%</span><span class="stat-l">Foco em conversão</span></div>
+    </div>
+  </div>
+</section>
+
+<div class="marquee"><div class="marquee-track"><span class="m-item">Branding<span class="m-sep">✦</span></span><span class="m-item">Identidade Visual<span class="m-sep">✦</span></span><span class="m-item">Motion Design<span class="m-sep">✦</span></span><span class="m-item">Reels Cinematográficos<span class="m-sep">✦</span></span><span class="m-item">Direção de Arte<span class="m-sep">✦</span></span><span class="m-item">IA Generativa<span class="m-sep">✦</span></span><span class="m-item">Landing Pages<span class="m-sep">✦</span></span><span class="m-item">Social Media<span class="m-sep">✦</span></span><span class="m-item">Lançamentos<span class="m-sep">✦</span></span><span class="m-item">Branding<span class="m-sep">✦</span></span><span class="m-item">Identidade Visual<span class="m-sep">✦</span></span><span class="m-item">Motion Design<span class="m-sep">✦</span></span><span class="m-item">Reels Cinematográficos<span class="m-sep">✦</span></span><span class="m-item">Direção de Arte<span class="m-sep">✦</span></span><span class="m-item">IA Generativa<span class="m-sep">✦</span></span><span class="m-item">Landing Pages<span class="m-sep">✦</span></span><span class="m-item">Social Media<span class="m-sep">✦</span></span><span class="m-item">Lançamentos<span class="m-sep">✦</span></span><span class="m-item">Branding<span class="m-sep">✦</span></span><span class="m-item">Identidade Visual<span class="m-sep">✦</span></span><span class="m-item">Motion Design<span class="m-sep">✦</span></span><span class="m-item">Reels Cinematográficos<span class="m-sep">✦</span></span><span class="m-item">Direção de Arte<span class="m-sep">✦</span></span><span class="m-item">IA Generativa<span class="m-sep">✦</span></span><span class="m-item">Landing Pages<span class="m-sep">✦</span></span><span class="m-item">Social Media<span class="m-sep">✦</span></span><span class="m-item">Lançamentos<span class="m-sep">✦</span></span></div></div>
+
+<section id="pilares">
+  <div class="container">
+    <span class="eyebrow">Nossos pilares</span>
+    <h2 class="section-title">Três forças, <span class="italic grad-text">uma marca inesquecível.</span></h2>
+    <div class="pillars">
+      <div class="pillar"><div class="n">01</div><h3>Design</h3><p class="desc">Identidade visual e direção de arte com padrão de grande marca — do logotipo ao último detalhe da apresentação.</p><ul><li><span class="dot"></span>Branding completo</li><li><span class="dot"></span>Sistemas visuais</li><li><span class="dot"></span>UI & Landing pages</li></ul></div><div class="pillar"><div class="n">02</div><h3>Motion</h3><p class="desc">Reels, vídeos institucionais e animações que prendem o olhar e contam histórias com ritmo cinematográfico.</p><ul><li><span class="dot"></span>Reels & Shorts</li><li><span class="dot"></span>Motion graphics</li><li><span class="dot"></span>Edição premium</li></ul></div><div class="pillar"><div class="n">03</div><h3>IA</h3><p class="desc">Fluxos com inteligência artificial para acelerar produção, personalizar conteúdo e escalar sem perder qualidade.</p><ul><li><span class="dot"></span>Automação criativa</li><li><span class="dot"></span>IA generativa</li><li><span class="dot"></span>Workflows sob medida</li></ul></div>
+    </div>
+  </div>
+</section>
+
+<section class="section-bordered">
+  <div class="container manifesto">
+    <span class="eyebrow">Manifesto</span>
+    <p class="manifesto-text">Postar por postar não constrói marca. <span class="italic grad-text">Construir marca exige direção, repertório e tecnologia.</span> É exatamente isso que entregamos.</p>
+    <p class="sub">A Vertex Studio nasceu para tirar marcas do "mais do mesmo" e levá-las para um patamar onde criatividade, estratégia e IA caminham juntas.</p>
+  </div>
+</section>
+
+<section id="servicos">
+  <div class="container">
+    <div class="services-grid">
+      <div class="col">
+        <span class="eyebrow">O que entregamos</span>
+        <h2 class="section-title">Operação criativa <span class="italic grad-text">de ponta a ponta.</span></h2>
+        <p>Mais do que peças bonitas: inteligência de mercado aplicada a design, motion e IA, com foco em gerar desejo e converter.</p>
+        <div style="margin-top:32px"><a href="https://wa.me/5567992743385" target="_blank" rel="noreferrer" class="btn btn-gold btn-lg"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="16" height="16"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>Começar um projeto<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="16" height="16"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg></a></div>
+      </div>
+      <div>
+        <div class="card">
+          <h3>O que está incluído</h3>
+          <ul class="list list-2"><li><span class="dot dot-gold"></span>Identidade visual e sistemas de marca</li><li><span class="dot dot-gold"></span>Direção de arte e curadoria estética</li><li><span class="dot dot-gold"></span>Reels cinematográficos e motion graphics</li><li><span class="dot dot-gold"></span>Roteiros e direção criativa para vídeos</li><li><span class="dot dot-gold"></span>Fluxos com IA generativa sob medida</li><li><span class="dot dot-gold"></span>Copywriting persuasivo e estratégico</li><li><span class="dot dot-gold"></span>Landing pages de alta conversão</li><li><span class="dot dot-gold"></span>Planejamento mensal de conteúdo</li><li><span class="dot dot-gold"></span>Campanhas de lançamento e sazonais</li><li><span class="dot dot-gold"></span>Otimização de perfil (bio, destaques, links)</li><li><span class="dot dot-gold"></span>Análise mensal de métricas e ajustes</li><li><span class="dot dot-gold"></span>Consultoria criativa contínua</li></ul>
+        </div>
+        <div class="card">
+          <h3>Esse serviço é para você se…</h3>
+          <ul class="list"><li><span class="dot dot-gold"></span>Você quer que sua marca pareça uma marca grande</li><li><span class="dot dot-gold"></span>Você posta consistentemente, mas não vê retorno</li><li><span class="dot dot-gold"></span>Você quer integrar IA ao seu processo criativo</li><li><span class="dot dot-gold"></span>Você quer crescer sem depender apenas de indicações</li><li><span class="dot dot-gold"></span>Você busca um parceiro criativo de longo prazo</li></ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="processo" class="section-bordered">
+  <div class="container">
+    <span class="eyebrow">Como trabalhamos</span>
+    <h2 class="section-title">Um processo claro para <span class="italic grad-text">resultados previsíveis.</span></h2>
+    <ol class="process"><li><div class="n">01</div><h3>Imersão</h3><p>Mergulhamos no seu negócio, concorrentes, público e objetivos para encontrar a oportunidade real.</p></li><li><div class="n">02</div><h3>Posicionamento</h3><p>Definimos a voz, a estética e o território da marca para construir autoridade.</p></li><li><div class="n">03</div><h3>Planejamento</h3><p>Calendário editorial e roadmap criativo conectados ao seu funil de vendas.</p></li><li><div class="n">04</div><h3>Produção</h3><p>Design, motion e ativos com IA prontos para publicar, lançar e escalar.</p></li><li><div class="n">05</div><h3>Evolução</h3><p>Análise de métricas, ajustes mensais e otimização contínua dos resultados.</p></li></ol>
+  </div>
+</section>
+
+<section id="faq">
+  <div class="container faq-wrap">
+    <span class="eyebrow">Dúvidas</span>
+    <h2 class="section-title">Perguntas <span class="italic grad-text">frequentes.</span></h2>
+    <div class="faq-list">
+      <div class="faq-item open"><button class="faq-q"><span class="q">Em quanto tempo começo a ver resultado?</span><span class="toggle"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="16" height="16"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></span></button><div class="faq-a"><div>Os primeiros impactos visuais aparecem nas duas primeiras semanas. Resultado de posicionamento e crescimento consistente costuma maturar entre 60 e 90 dias.</div></div></div><div class="faq-item"><button class="faq-q"><span class="q">Vocês atendem marcas de qualquer segmento?</span><span class="toggle"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="16" height="16"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></span></button><div class="faq-a"><div>Trabalhamos com marcas que valorizam estética, narrativa e crescimento. Avaliamos cada projeto para garantir o melhor encaixe estratégico.</div></div></div><div class="faq-item"><button class="faq-q"><span class="q">Como funciona a parte de IA?</span><span class="toggle"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="16" height="16"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></span></button><div class="faq-a"><div>Aplicamos IA generativa em produção visual, copy, roteiros e automações criativas — sempre com curadoria humana garantindo qualidade premium.</div></div></div><div class="faq-item"><button class="faq-q"><span class="q">Posso contratar apenas design ou apenas motion?</span><span class="toggle"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="16" height="16"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></span></button><div class="faq-a"><div>Sim. Trabalhamos por projeto pontual ou em retainer mensal, com escopo adaptado à sua fase atual.</div></div></div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="container" style="max-width:960px">
+    <div class="cta-box">
+      <span class="eyebrow">Pronto pra decolar?</span>
+      <h2 class="section-title" style="margin:16px auto 0">Sua marca merece mais do que bonito — <span class="italic grad-text">merece estratégia.</span></h2>
+      <p>Vamos transformar sua presença digital em oportunidade real de negócio. Toque abaixo e fale diretamente com a gente.</p>
+      <div class="cta-actions">
+        <a href="https://wa.me/5567992743385" target="_blank" rel="noreferrer" class="btn btn-gold btn-lg"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="16" height="16"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>Falar no WhatsApp</a>
+        <a href="https://instagram.com/V3rtex.studio" target="_blank" rel="noreferrer" class="btn btn-ghost btn-lg"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="16" height="16"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>@V3rtex.studio</a>
+      </div>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="container foot">
+    <div class="logo">VERTEX <span class="italic">Studio</span></div>
+    <p class="copy">© 2026 Vertex Studio. Todos os direitos reservados.</p>
+    <div class="foot-icons">
+      <a href="https://instagram.com/V3rtex.studio" target="_blank" rel="noreferrer" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="16" height="16"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg></a>
+      <a href="https://wa.me/5567992743385" target="_blank" rel="noreferrer" aria-label="WhatsApp"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="16" height="16"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg></a>
+    </div>
+  </div>
+</footer>
+
+<script>
+const plusSvg = `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="16" height="16"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>`;
+const minusSvg = `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="16" height="16"><line x1="5" y1="12" x2="19" y2="12"/></svg>`;
+document.querySelectorAll('.faq-item').forEach(item=>{
+  const btn = item.querySelector('.faq-q');
+  const toggle = item.querySelector('.toggle');
+  if(item.classList.contains('open')) toggle.innerHTML = minusSvg;
+  btn.addEventListener('click',()=>{
+    const isOpen = item.classList.toggle('open');
+    toggle.innerHTML = isOpen ? minusSvg : plusSvg;
+  });
+});
+const mb = document.getElementById('menuBtn');
+const mn = document.getElementById('mobileNav');
+mb.addEventListener('click',()=>{
+  const open = mn.classList.toggle('open');
+  mb.innerHTML = open ? minusSvg : plusSvg;
+});
+mn.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>{mn.classList.remove('open');mb.innerHTML=plusSvg}));
+</script>
+</body>
+</html>
